@@ -1,4 +1,4 @@
-" colorscheme solarized
+colorscheme solarized
 
 filetype plugin on
 filetype indent on
