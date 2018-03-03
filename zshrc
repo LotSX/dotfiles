@@ -1,5 +1,6 @@
+export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
- export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/raychen/.oh-my-zsh
@@ -62,14 +63,15 @@ plugins=(
   brew
   common-aliases
   git
-  gitfast
   git-extras
+  nyan
   osx
   sublime
+  sudo
   tmux
 )
 
-export DEFAULT_USER="raychen"
+DEFAULT_USER="raychen"
 cowsay -W 72 $(fortune -s) | lolcat
 
 source $ZSH/oh-my-zsh.sh
@@ -107,5 +109,9 @@ alias master='git checkout master'
 alias server='python -m SimpleHTTPServer'
 alias p="cd ~/projects"
 
+alias tmux="TERM=screen-256color-bce tmux"
+
 alias 0="cd '/Users/raychen/Google Drive/2014-2018/Year 4/2018 Winter'"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
