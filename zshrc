@@ -96,6 +96,11 @@ fi
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# macfeh
+function macfeh() {
+  open -b "drabweb.macfeh" "$@"
+}
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -108,8 +113,6 @@ alias ohmyzsh="subl ~/.oh-my-zsh"
 alias master='git checkout master'
 alias server='python -m SimpleHTTPServer'
 alias p="cd ~/projects"
-
-alias tmux="TERM=screen-256color-bce tmux"
 
 alias 0="cd '/Users/raychen/Google Drive/2014-2018/Year 4/2018 Winter'"
 

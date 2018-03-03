@@ -1,12 +1,12 @@
+syntax enable
+set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-
 colorscheme solarized
 
 filetype plugin on
 filetype indent on
 
-set background=dark
 set mouse=a
 set colorcolumn=80
 set textwidth=72
@@ -26,4 +26,3 @@ set showmatch
 set smartcase
 set ruler
 
-syntax enable
