@@ -1,3 +1,6 @@
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+
 colorscheme solarized
 
 filetype plugin on
@@ -24,4 +27,3 @@ set smartcase
 set ruler
 
 syntax enable
-
