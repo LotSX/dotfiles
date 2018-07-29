@@ -114,7 +114,18 @@ alias master='git checkout master'
 alias server='python -m SimpleHTTPServer'
 alias p="cd ~/projects"
 
+alias j10="export JAVA_HOME=`/usr/libexec/java_home -v 10`; java -version"
+alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
+
 alias 0="cd '/Users/raychen/Google Drive/2014-2018/Year 4/2018 Winter'"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/file-formula/bin:$PATH"
+export PATH="/usr/local/opt/unzip/bin:$PATH"
+export PATH="/usr/local/opt/zip/bin:$PATH"
 

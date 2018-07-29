@@ -26,16 +26,16 @@
 # Note that rtv returns a list of urls for imgur albums, so we don't put quotes
 # around the `%s`
 image/x-imgur-album; open -b "drabweb.macfeh" %s; test=test -n "$DISPLAY"
-image/gif; mpv '%s' --autofit 50%x50% --loop=inf; test=test -n "$DISPLAY"
-image/*; open -b "drabweb.macfeh" '%s'; test=test -n "$DISPLAY"
+image/gif; mpv '%s' --autofit 100%x100% --loop=inf; test=test -n "$DISPLAY"
+# image/*; open -b "drabweb.macfeh" '%s'; test=test -n "$DISPLAY"
 
 # Youtube videos are assigned a custom mime-type, which can be streamed with
 # vlc or youtube-dl.
 # video/x-youtube; vlc '%s' --width 640 --height 480; test=test -n "$DISPLAY"
-video/x-youtube; mpv --ytdl-format=best '%s' --autofit 50%x50%; test=test -n "$DISPLAY"
+video/x-youtube; mpv --ytdl-format=best '%s' --autofit 100%x100%; test=test -n "$DISPLAY"
 
 # Mpv is a simple and effective video streamer
-video/*; mpv '%s' --autofit 50%x50% --loop=inf; test=test -n "$DISPLAY"
+video/*; mpv '%s' --autofit 100%x100% --loop=inf; test=test -n "$DISPLAY"
 
 ###############################################################################
 # Commands below this point will attempt to display media directly in the
@@ -44,7 +44,7 @@ video/*; mpv '%s' --autofit 50%x50% --loop=inf; test=test -n "$DISPLAY"
 
 # View images directly in your terminal with iTerm2
 # curl -L https://iterm2.com/misc/install_shell_integration_and_utilities.sh | bash
- image/*; curl -s %s | ~/.iterm2/imgcat && read -n 1; needsterminal
+image/*; curl -s %s | ~/.iterm2/imgcat && read -n 1; needsterminal
 
 # View true images in the terminal, supported by rxvt-unicode, xterm and st
 # Requires the w3m-img package
