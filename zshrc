@@ -64,7 +64,6 @@ plugins=(
   common-aliases
   git
   git-extras
-  nyan
   osx
   sublime
   sudo
@@ -114,12 +113,17 @@ alias master='git checkout master'
 alias server='python -m SimpleHTTPServer'
 alias p="cd ~/projects"
 
-alias j10="export JAVA_HOME=`/usr/libexec/java_home -v 10`; java -version"
+alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
 alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
 
 alias 0="cd '/Users/raychen/Google Drive/2014-2018/Year 4/2018 Winter'"
 
+alias mpv="mpv --autofit 100%x100% --loop=inf"
+alias tmux="tmux -2"
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export HISTFILE=${HOME}/.zsh_history
 
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
@@ -128,5 +132,6 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/file-formula/bin:$PATH"
 export PATH="/usr/local/opt/unzip/bin:$PATH"
 export PATH="/usr/local/opt/zip/bin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 unalias imgcat
