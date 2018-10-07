@@ -10,11 +10,34 @@ set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
+call togglebg#map("<F5>")
+
+" Emmet Settings
+autocmd FileType html,css EmmetInstall
+
+let g:user_emmet_mode='n'
+let g:user_emmet_install_global = 0
+
+" Incsearch Settings
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+let g:incsearch#auto_nohlsearch = 1
 
 " NERDtree Settings
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
 let NERDTreeShowHidden=1
+
+nmap <F6> :NERDTreeToggle<CR>
 
 " Syntastic Settings
 set statusline+=%#warningmsg#
@@ -25,10 +48,28 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_javascript_checkers = ['eslint']
 
-" Key Mappings
-nmap <F6> :NERDTreeToggle<CR>
+" Tagbar Settings
+nmap <F8> :TagbarToggle<CR>
+
+" Airline Settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_highlighting_cache = 1
+
+" Easymotion Settings
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_smartcase = 1
+
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+nmap s <Plug>(easymotion-overwin-f2)
 
 " Other Settings
 filetype plugin on
