@@ -104,8 +104,13 @@ function macfeh() {
 alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 
-alias master='git checkout master'
-alias server='python -m SimpleHTTPServer'
+alias master="git checkout master"
+alias server="python -m SimpleHTTPServer"
+
+alias c++="/usr/local/bin/c++"
+alias cc="/usr/local/bin/gcc"
+alias g++="/usr/local/bin/g++"
+alias gcc="/usr/local/bin/gcc"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

@@ -31,17 +31,17 @@ map g# <Plug>(incsearch-nohl-g#)
 
 let g:incsearch#auto_nohlsearch = 1
 
+" NERDcommenter Settings
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+
 " NERDtree Settings
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
+let NERDTreeRespectWildIgnore=1
 let NERDTreeShowHidden=1
 nmap <F6> :NERDTreeToggle<CR>
-
-" NERDtree Settings
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-let NERDTreeShowHidden=1
 
 " Syntastic Settings
 set statusline+=%#warningmsg#
@@ -119,6 +119,7 @@ filetype indent on
   set wildignore+=*.a,*.o,*.so,*.pyc,*.class
   set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.pdf
   set wildignore+=*/.git*,*.tar,*.zip
+  set wildignore+=node_modules
   set wildmode=longest:full,list:full
 
   " Word Wrapping
@@ -141,11 +142,11 @@ set splitright
 set title
 set ttyfast
 
+set backspace=indent,eol,start
 set completeopt=menu,preview,longest
+set colorcolumn=100
 set history=1000
 set mouse=a
 set numberwidth=5
 set vb t_vb=
-
 set shortmess+=I
-
