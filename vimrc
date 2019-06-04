@@ -54,9 +54,41 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_checkers = ['flake8', 'pylint']
+let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 " Tagbar Settings
 nmap <F8> :TagbarToggle<CR>
+
+let g:tagbar_type_css = {
+\ 'ctagstype' : 'Css',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 's:selectors',
+        \ 'i:identities'
+    \ ]
+\ }
+
+" tstags
+let g:tagbar_type_typescript = {
+  \ 'ctagsbin' : 'tstags',
+  \ 'ctagsargs' : '-f-',
+  \ 'kinds': [
+    \ 'e:enums:0:1',
+    \ 'f:function:0:1',
+    \ 't:typealias:0:1',
+    \ 'M:Module:0:1',
+    \ 'I:import:0:1',
+    \ 'i:interface:0:1',
+    \ 'C:class:0:1',
+    \ 'm:method:0:1',
+    \ 'p:property:0:1',
+    \ 'v:variable:0:1',
+    \ 'c:const:0:1',
+  \ ],
+  \ 'sort' : 0
+\ }
 
 " Airline Settings
 let g:airline#extensions#tabline#enabled = 1

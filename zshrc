@@ -1,4 +1,11 @@
 export TERM="xterm-256color"
+
+# PATH is empty before path_helper runs
+if [ -f /etc/profile ]; then
+    PATH=""
+    source /etc/profile
+fi
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -99,8 +106,7 @@ function macfeh() {
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
+
 alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 
@@ -112,8 +118,24 @@ alias cc="/usr/local/bin/gcc"
 alias g++="/usr/local/bin/g++"
 alias gcc="/usr/local/bin/gcc"
 
+alias man="gem man -ls"
+
+alias pip="pip3"
+alias python="python3"
+alias python-config="python3-config"
+
+alias cucumber-js="/Users/raychen/productops/collins/caerodp-tester/node_modules/cucumber/bin/cucumber-js"
+alias novastart="pm2 startOrRestart config/default.js --only nova-service --watch . -f"
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/usr/local/opt/openssl/bin:$PATH
+export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/opt/sqlite/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
